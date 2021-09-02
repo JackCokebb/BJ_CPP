@@ -9,21 +9,17 @@ int main(){
     cin >> input;
 
     for(int i = input; i > 0; i--){
-        for(int j=0; j<input-i+1;j++)
-            cout<<"*";
-        for(int k=0; k< (i-1)*2;k++)
+        for(int j=0; j<input-i;j++)
             cout<<" ";
-        for(int j=0; j<input-i+1;j++)
+        for(int k=0; k< i*2-1;k++)
             cout<<"*";
         cout<< "\n";
     }
     for(int i =1; i<input;i++){
-        for(int j=0; j<input-i;j++)
-            cout << "*";
-        for(int k=0; k< i*2;k++)
-            cout <<" ";
-        for(int j=0; j<input-i;j++)
-            cout << "*";
+        for(int j=1; j<input-i;j++)
+            cout << " ";
+        for(int k=0; k< i*2+1;k++)
+            cout <<"*";
         cout << "\n";
     }
 
