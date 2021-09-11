@@ -17,9 +17,13 @@ void traverse(node* a){
         cout<<"\n\n";
 }
 
+void insert(int index, int input){
+
+}
+
 int main(void){
     ios::sync_with_stdio(0);
     cin.tie(0);
 
-
+    return 0;
 }
