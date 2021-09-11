@@ -6,51 +6,39 @@ int main(){
     cin.tie(0);
 
     string input;
-    char comm, arg;
     int commNum=0;
-    cin >> input;
     cin >> commNum;
 
-    list<char> txt ={};
-    list<char>::iterator it = txt.begin();
-    
-
-    for(int i =0 ; i < (int)input.length(); i++){
-        txt.push_back(input[i]);
-        it++;
-    }
-    it++;
-
     for(int i = 0; i< commNum; i++){
-        cin >> comm;
-        switch(comm){
-            case 'P' : 
-                cin >> arg;
-                txt.insert(it,arg);                  
-                break;
-            case 'L' : 
-                if(it == txt.begin())
-                    break;
-                else
-                    it--;
-                break;
-            case 'D' :
-                if(it== txt.end())
-                    break;
-                else{
-                    it++;
-                    break;
-                }
-            case 'B' : 
-                if(it != txt.begin()){
-                    it--;
-                    it = txt.erase(it);                 
-                }
-        }
-    }
-    for(auto t : txt){
-        cout << t;
-    }
+        list<char> txt ={};
+        list<char>::iterator it = txt.begin();
+        cin >> input;
 
+        for(auto a : input){
+            switch(a){
+                case '<' : 
+                    if(it != txt.begin())
+                        it--;
+                    break;
+                case '>' :
+                    if(it != txt.end())
+                        it++;
+                    break;
+                case '-' : 
+                    if(it != txt.begin()){
+                        it--;
+                        it = txt.erase(it);                                     
+                    }
+                    break;
+                default :
+                    txt.insert(it,a);                  
+                    break;
+            }
+        }
+        for(auto t : txt){
+            cout << t;
+        }
+        cout << "\n";
+    }
     return 0;
 }
