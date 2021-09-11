@@ -20,7 +20,6 @@ int main(){
         it++;
     }
     it++;
-    list<char>::iterator it2 = txt.end();
 
     for(int i = 0; i< commNum; i++){
         cin >> comm;
