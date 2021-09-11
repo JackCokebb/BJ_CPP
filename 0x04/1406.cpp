@@ -43,18 +43,9 @@ int main(){
                     break;
                 }
             case 'B' : 
-                if(it == txt.begin())
-                    break;
-                else{
-                    if(it == it2){
-                        it--;
-                        txt.erase(it);
-                        it = txt.end();
-                    }
-                    else{
-                        it--;
-                        txt.erase(it++);
-                    }                    
+                if(it != txt.begin()){
+                    it--;
+                    it = txt.erase(it);                 
                 }
         }
     }
