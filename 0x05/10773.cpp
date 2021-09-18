@@ -37,46 +37,18 @@ int main(){
     ios::sync_with_stdio(0);
     cin.tie(0);
 
-    int k =0, comm=0, nextNum=1;
-    list<char> command;
-    list<char>::iterator it = command.begin();
+    int k =0, sum =0,input;
     cin >> k;
-    while(true){
-        cin >> comm;
-        if(comm > nextNum){
-            for(int i = nextNum; i<= comm;i++){
-                push(i);
-                nextNum++;
-                command.push_back('+');
-                }
+    for(int i =0; i<k; i++){
+        cin >> input;
+        if(input == 0)
             pop();
-            command.push_back('-');
-            }
-        
-        else if(comm == nextNum){
-            push(comm);
-            pop();
-            command.push_back('+');
-            command.push_back('-');
-            nextNum++;
-        }
-        else if(comm < nextNum){
-            if(top() !=comm){
-                cout<< "NO";
-                return 0;
-            }
-            else{
-                pop();
-                command.push_back('-');
-            }
-        }
-        if(nextNum>k&&empty()==0)
-            break;
-
+        else
+            push(input);
     }
-    for(it = command.begin(); it!=command.end(); it++)
-        cout<<*it<<"\n";
- 
+
+    while(empty()!=0)
+        sum += pop(); 
+    cout << sum;
 
     return 0;
-}
